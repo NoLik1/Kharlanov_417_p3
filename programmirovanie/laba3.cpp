@@ -72,10 +72,10 @@ int main()
             std::cout<<massiv3[l][h]<<"\t";
          
         }
-      
+         
         std::cout<<std::endl;
     }
-    //лаба вроде бы как завершена 
+    //лаба вроде бы как завершена
 return 0;
 }
 
