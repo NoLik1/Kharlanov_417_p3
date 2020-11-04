@@ -50,8 +50,33 @@ setlocale(LC_ALL, "Russian");
     for (int row = 0; row<vtotryMassiv;row++){
         delete [] massichik2 [row]; // удаление массива отдельных столбцов
     }
-    delete [] massichik2; // удаление массива указателей
-    std::cout<<"\t\t\t"<<"Функции"<<std::endl; 
+    delete [] massichik2; // удаление массива указателейm */
+    std::cout<<"\t\t\t"<<"Функции"<<std::endl;
+    std::cout<<"Вводж динамического массива через функцию"<<std::endl;
+    int rowws=3;
+    int colls=3;
+    int massiv_dinamic(int array[rowws][colls], int *row1, int *col);
+    {
+        int **array = new int* [rowws];
+        for (int row=0;row<rowws;row++) {
+        array[row] = new int [colls] ;
+            }
+        for (int row1 = 0; row1<rowws;row1++){
+        for ( int col = 0;col<colls;col++){
+            std::cin>>array [row1][col];
+            }
+        }
+        for (int row1 = 0; row1<rowws;row1++){
+        for ( int col = 0;col<colls;col++){
+        std::cout<<array[row1][col]<<"\t";
+        }
+            std::cout<<std::endl;
+          }
+    }
+    massiv_dinamic;
+    
+    
     system ("pause");
         return 0;
+    
     }
