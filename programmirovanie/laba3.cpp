@@ -75,6 +75,7 @@ int main()
       
         std::cout<<std::endl;
     }
+    //лаба вроде бы как завершена 
 return 0;
 }
 
