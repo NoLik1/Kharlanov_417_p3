@@ -5,20 +5,25 @@
 
 
 
-void input_dinamic(int **array, int &row, int &col)
+void input_dinamic(int** array, int& row_count, int& col_count) //функци по вводу динамического массива с экрана
 {
-    std::cin>>row;
-    std::cin>>col;
-    
-    int **array = new int* [row];
-    for (int row1 = 0; row<row1; row++){
-    array[row] = new int [col] ;
-}
-    for (int row1 = 0; row1<row; row1++){
-    for (int col1 = 0; col<col1; col1++){
-        std::cin>>array [row1][col1];
-}
-}
+    std::cin >> row_count;
+    std::cin >> col_count;
+
+
+
+    array = new int* [row_count];
+    for (int row = 0; row < row_count; row++) {
+        array[row] = new int[col_count];
+    }
+
+
+
+    for (int row = 0; row < row_count; row++) {
+        for (int col = 0; col < col_count; col++) {
+            std::cin >> array[row][col];
+        }
+    }
 }
 int main()
 {
@@ -71,7 +76,10 @@ for (int g=0;g<perviymassiv;g++){
     std::cout<<"\t\t\t"<<"Функции"<<std::endl;
      std::cout<<"Ввод динамического массива через функцию"<<std::endl;
     
-     input_dinamic;
+    int** array = nullptr;
+    int row_count;
+    int col_count;
+    input_dinamic(array, row_count, col_count);// вызов этой функции
     
     
     system ("pause");
