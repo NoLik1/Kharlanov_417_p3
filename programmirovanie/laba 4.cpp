@@ -3,9 +3,28 @@
 #include<bitset>
 #include<iostream>
 
+
+
+void array_dinamic(int array[rowws][cosl], int *row1, int *col)
+{
+    int **array = new int* [rowws];
+    for (int row=0;row<rowws;row++) {
+    array[row] = new int [colls] ;
+        }
+    for (int row1 = 0; row1<rowws;row1++){
+    for ( int col = 0;col<colls;col++){
+        std::cin>>array [row1][col];
+        }
+    }
+    for (int row1 = 0; row1<rowws;row1++){
+    for ( int col = 0;col<colls;col++){
+    std::cout<<array[row1][col]<<"\t";
+    }
+        std::cout<<std::endl;
+      }
 int main()
 {
-setlocale(LC_ALL, "Russian");
+/*setlocale(LC_ALL, "Russian");
     std::cout<<"\t\t\t"<<"Лабороторная 4. Динамическая память "<<std::endl;
     int *peremennay1 = new int; // объявление переменной в динамической памяти
     *peremennay1 = 10;// присваивание ей значения
@@ -52,28 +71,11 @@ setlocale(LC_ALL, "Russian");
     }
     delete [] massichik2; // удаление массива указателейm */
     std::cout<<"\t\t\t"<<"Функции"<<std::endl;
-    std::cout<<"Вводж динамического массива через функцию"<<std::endl;
+     std::cout<<"Вводж динамического массива через функцию"<<std::endl;
     int rowws=3;
     int colls=3;
-    int massiv_dinamic(int array[rowws][colls], int *row1, int *col);
-    {
-        int **array = new int* [rowws];
-        for (int row=0;row<rowws;row++) {
-        array[row] = new int [colls] ;
-            }
-        for (int row1 = 0; row1<rowws;row1++){
-        for ( int col = 0;col<colls;col++){
-            std::cin>>array [row1][col];
-            }
-        }
-        for (int row1 = 0; row1<rowws;row1++){
-        for ( int col = 0;col<colls;col++){
-        std::cout<<array[row1][col]<<"\t";
-        }
-            std::cout<<std::endl;
-          }
-    }
-    massiv_dinamic;
+    
+     array_dinamic;
     
     
     system ("pause");
