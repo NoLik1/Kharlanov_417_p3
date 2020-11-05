@@ -5,38 +5,36 @@
 
 
 
-void array_dinamic(int array[rowws][cosl], int *row1, int *col)
+void input_dinamic(int **array, int &row, int &col)
 {
-    int **array = new int* [rowws];
-    for (int row=0;row<rowws;row++) {
-    array[row] = new int [colls] ;
-        }
-    for (int row1 = 0; row1<rowws;row1++){
-    for ( int col = 0;col<colls;col++){
-        std::cin>>array [row1][col];
-        }
-    }
-    for (int row1 = 0; row1<rowws;row1++){
-    for ( int col = 0;col<colls;col++){
-    std::cout<<array[row1][col]<<"\t";
-    }
-        std::cout<<std::endl;
-      }
+    std::cin>>row;
+    std::cin>>col;
+    
+    int **array = new int* [row];
+    for (int row1 = 0; row<row1; row++){
+    array[row] = new int [col] ;
+}
+    for (int row1 = 0; row1<row; row1++){
+    for (int col1 = 0; col<col1; col1++){
+        std::cin>>array [row1][col1];
+}
+}
+}
 int main()
 {
-/*setlocale(LC_ALL, "Russian");
-    std::cout<<"\t\t\t"<<"Лабороторная 4. Динамическая память "<<std::endl;
-    int *peremennay1 = new int; // объявление переменной в динамической памяти
-    *peremennay1 = 10;// присваивание ей значения
-    std::cout<<"Динамическая переменная = "<<*peremennay1<<std::endl ;
-    std::cout<<""<<std::endl;
-    std::cout<<"\t\t\t"<<"Работа с массивами в динамической памяти "<<std::endl;
-    int   perviymassiv;
-    std::cout<<"Введите количество переменных в массиве = ";
-    std::cin>>perviymassiv;
-    int *massichik = new int [perviymassiv]; // объявление массива в динамической памяти
-    for (int g=0;g<perviymassiv;g++){
-        massichik[g] = g+1;
+setlocale(LC_ALL, "Russian");
+std::cout<<"\t\t\t"<<"Лабороторная 4. Динамическая память "<<std::endl;
+int *peremennay1 = new int; // объявление переменной в динамической памяти
+*peremennay1 = 10;// присваивание ей значения
+std::cout<<"Динамическая переменная = "<<*peremennay1<<std::endl ;
+std::cout<<""<<std::endl;
+std::cout<<"\t\t\t"<<"Работа с массивами в динамической памяти "<<std::endl;
+int   perviymassiv;
+std::cout<<"Введите количество переменных в массиве = ";
+std::cin>>perviymassiv;
+int *massichik = new int [perviymassiv]; // объявление массива в динамической памяти
+for (int g=0;g<perviymassiv;g++){
+     massichik[g] = g+1;
         std::cout<<"Динамический массив  с индексом "<<g<< " = "<<massichik[g] << std::endl;
     }
     std::cout<<"\t\t\t"<<"Создание двумерного динамического массива с клавиатуры"<<std::endl;
@@ -71,14 +69,12 @@ int main()
     }
     delete [] massichik2; // удаление массива указателейm */
     std::cout<<"\t\t\t"<<"Функции"<<std::endl;
-     std::cout<<"Вводж динамического массива через функцию"<<std::endl;
-    int rowws=3;
-    int colls=3;
+     std::cout<<"Ввод динамического массива через функцию"<<std::endl;
     
-     array_dinamic;
+     input_dinamic;
     
     
     system ("pause");
         return 0;
     
-    }
+}
