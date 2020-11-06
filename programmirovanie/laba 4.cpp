@@ -5,7 +5,7 @@
 
 
 
-void input_dinamic(int** array, int& row_count, int& col_count) //функци по вводу динамического массива с экрана
+void input_dinamic(int** array, int& row_count, int& col_count) // создание функции по вводу динамического массива с экрана
 {
     std::cin >> row_count;
     std::cin >> col_count;
@@ -25,10 +25,38 @@ void input_dinamic(int** array, int& row_count, int& col_count) //функци �
         }
     }
 }
+void mat_multiplication (int** array1, int& row_count1,int& col_count1,int** array2, int& row_count2,int& col_count2){
+    int row_count3,col_count3;
+    std::cin>>row_count3;
+    std::cin>>col_count3;
+    
+    int **array3= new int* [row_count2];
+    for ( int row=0; row<row_count2; row++){
+        array3[row] = new int [col_count1] ; // создание массива столбцов (выделение памяти)
+    }
+    
+    
+    array3[row_count1][col_count2]=0;
+            for (int k=0;k<3;k++){
+               array3 [row_count3][col_count3]+= array1 [row_count1][k] * array2 [k][col_count2];
+            }
+        }
+void output_array(int** array3,int& row_count3,int& col_count3){
+    array3= new int* [row_count3];
+    for ( int row=0; row<row_count3; row++){
+        array3[row] = new int [col_count3] ; // создание массива столбцов (выделение памяти)
+    }
+    for (int row = 0; row<row_count3;row++){
+         for (int col = 0; col<col_count3;col++){
+                std::cout<<array3[row][col]<<"\t";
+    }
+        std::cout<<std::endl;
+     }
+}
 int main()
 {
 setlocale(LC_ALL, "Russian");
-std::cout<<"\t\t\t"<<"Лабороторная 4. Динамическая память "<<std::endl;
+/*std::cout<<"\t\t\t"<<"Лабороторная 4. Динамическая память "<<std::endl;
 int *peremennay1 = new int; // объявление переменной в динамической памяти
 *peremennay1 = 10;// присваивание ей значения
 std::cout<<"Динамическая переменная = "<<*peremennay1<<std::endl ;
@@ -76,12 +104,19 @@ for (int g=0;g<perviymassiv;g++){
     std::cout<<"\t\t\t"<<"Функции"<<std::endl;
      std::cout<<"Ввод динамического массива через функцию"<<std::endl;
     
-    int** array = nullptr;
-    int row_count;
-    int col_count;
-    input_dinamic(array, row_count, col_count);// вызов этой функции
-    
-    
+    int** array1 = nullptr;
+    int** array2 = nullptr;
+    int** array3 = nullptr;
+    int row_count1;
+    int row_count2;
+    int row_count3;
+    int col_count1;
+    int col_count2;
+    int col_count3;
+    input_dinamic(array1, row_count1, col_count1);
+    input_dinamic(array2, row_count2, col_count2);// вызов этой функции
+    mat_multiplication(array1,row_count1, col_count1, array2, row_count1, col_count2);
+    output_array(array3, row_count3, col_count3);
     system ("pause");
         return 0;
     
