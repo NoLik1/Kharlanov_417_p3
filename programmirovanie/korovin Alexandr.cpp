@@ -13,8 +13,18 @@ int Fibonecci (int numbers) {
         return Fibonecci(numbers-1) + Fibonecci(numbers-2) ;
     }
 }
-
-
+long power(long a, long b) {
+  if(b == 0){
+    return 1;
+  }
+  if(b % 2 == 0){
+    return power(a * a, b / 2);
+  } else{
+  return  a* power(a, b - 1);
+  }
+    
+}
+ 
 
 
                
@@ -23,13 +33,16 @@ int Fibonecci (int numbers) {
 int main()
 {
 setlocale(LC_ALL, "Russian");
-    int numbers;
+     int numbers;
     std::cin>>numbers;
     for (int i=0;i<numbers; i++){
         std::cout<< "Число Фибоначи "<<i<<" = "<< Fibonecci(i)<<std::endl;
     }
-
-    system ("pause");
+    long a,b;
+    std::cin>>a;
+    std::cin>>b;
+    std::cout << "Число "<<a<<" возведённое в степень "<<b<<" = " << power(a,b)<<std::endl;
+    system("pause");
         return 0;
     
 }
