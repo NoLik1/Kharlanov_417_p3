@@ -24,8 +24,6 @@ long power(long a, long b) {
   }
     
 }
- 
-
 
                
                
@@ -35,13 +33,20 @@ int main()
 setlocale(LC_ALL, "Russian");
      int numbers;
     std::cin>>numbers;
-    for (int i=0;i<numbers; i++){
+    if (numbers>0){
+        for (int i=0;i<numbers; i++){
         std::cout<< "Число Фибоначи "<<i<<" = "<< Fibonecci(i)<<std::endl;
     }
+    }else{
+        std::cout<<"Введите числа"<<std::endl;    }
     long a,b;
     std::cin>>a;
     std::cin>>b;
+    if ((a>0)&&(b>0)){
     std::cout << "Число "<<a<<" возведённое в степень "<<b<<" = " << power(a,b)<<std::endl;
+    }else{
+        std::cout<<"Введите числа"<<std::endl;
+    }
     system("pause");
         return 0;
     
