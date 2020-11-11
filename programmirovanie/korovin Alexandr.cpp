@@ -24,10 +24,6 @@ long power(long a, long b) {
   }
     
 }
-
-               
-               
-            
 int main()
 {
 setlocale(LC_ALL, "Russian");
