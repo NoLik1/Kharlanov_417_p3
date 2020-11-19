@@ -5,7 +5,7 @@
 
 
 
-int input_dinamic(int** array, int& row_count, int& col_count) // создание функции по вводу динамического массива с экрана
+void input_dinamic(int** array, int& row_count, int& col_count) // создание функции по вводу динамического массива с экрана
 {
     std::cin >> row_count;
     std::cin >> col_count;
@@ -24,7 +24,6 @@ int input_dinamic(int** array, int& row_count, int& col_count) // создани
             std::cin >> array[row][col];
         }
     }
-    return **array;
 }
 int mat_multiplication (int** array1, int& row_count1,int& col_count1,int** array2, int& row_count2,int& col_count2){
     int row_count3,col_count3;
@@ -35,9 +34,9 @@ int mat_multiplication (int** array1, int& row_count1,int& col_count1,int** arra
     for ( int row=0; row<row_count3; row++){
         array3[row] = new int [col_count3] ; // создание массива столбцов (выделение памяти)
     }
-    array3[row_count3][col_count3]=0;
+    array3[row_count3-1][col_count3-1]=0;
             for (int k=0;k<3;k++){
-               array3 [row_count3][col_count3]+= array1 [row_count1][k] * array2 [k][col_count2];
+               array3 [row_count3-1][col_count3-1]+= array1 [row_count1-1][k] * array2 [k][col_count2-1];
             }
     return **array3;;
         }
