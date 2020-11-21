@@ -31,20 +31,23 @@ void input_dinamic(int**& array, int& row_count, int& col_count) // создан
         std::cout<<std::endl;
     }
 }
-int mat_multiplication (int** array1, int& row_count1,int& col_count1,int** array2, int& row_count2,int& col_count2){
-    int row_count3,col_count3;
+void mat_multiplication (int** array1, int& row_count1,int& col_count1,int** array2, int& row_count2,int& col_count2,int**& array3, int& row_count3, int& col_count3) {
+   
     std::cin>>row_count3;
     std::cin>>col_count3;
     
     array3= new int* [row_count3];
     for ( int row=0; row<row_count3; row++){
         array3[row] = new int [col_count3] ;
-    }
-    array3[row_count3-1][col_count3-1]=0;
-            for (int k=0;k<2;k++){
-                array3 [row_count3-1][col_count3-1]+= array1 [row_count1-1][k] * array2 [k][col_count2-1];
-            }
-        }
+        for (int col = 0; col < col_count3; col++) {
+                array3[row][col]=0;
+            for (int k=0;k<row_count3;k++){
+                array3 [row][col]+= array1 [row][k] * array2 [k][col];
+            
+       }
+     }
+   }
+ }
 void output_array(int**& array3,int& row_count3,int& col_count3){
     for (int row = 0; row<row_count3;row++){
          for (int col = 0; col<col_count3;col++){
@@ -56,7 +59,7 @@ void output_array(int**& array3,int& row_count3,int& col_count3){
 int main()
 {
 setlocale(LC_ALL, "Russian");
-/*std::cout<<"\t\t\t"<<"Лабороторная 4. Динамическая память "<<std::endl;
+std::cout<<"\t\t\t"<<"Лабороторная 4. Динамическая память "<<std::endl;
 int *peremennay1 = new int; // объявление переменной в динамической памяти
 *peremennay1 = 10;// присваивание ей значения
 std::cout<<"Динамическая переменная = "<<*peremennay1<<std::endl ;
@@ -100,7 +103,7 @@ for (int g=0;g<perviymassiv;g++){
     for (int row = 0; row<vtotryMassiv;row++){
         delete [] massichik2 [row]; // удаление массива отдельных столбцов
     }
-    delete [] massichik2; // удаление массива указателейm */
+    delete [] massichik2; // удаление массива указателейm
     std::cout<<"\t\t\t"<<"Функции"<<std::endl;
      std::cout<<"Ввод динамического массива через функцию"<<std::endl;
     
