@@ -50,7 +50,7 @@ std::cout<<"Введём вторую матрицу"<<std::endl;
             }
     std::cout<<""<<std::endl;
     std::cout<<"\t\t\t\t"<<"Умножение массивов"<<std::endl;
-    std::cout<<"\tВведём размер массива "<<std::endl;
+        std::cout<<"\tВведём размер массива "<<std::endl;
     int vtotryMassiv3 , treriymassiv3 ;
     std::cin>> vtotryMassiv3;
     std::cin>>treriymassiv3 ;
@@ -64,7 +64,7 @@ std::cout<<"Введём вторую матрицу"<<std::endl;
         for (int j = 0; j < treriymassiv3; j++)
         {
             massichik3[i][j]=0;
-            for (int k=0;k<2;k++)
+            for (int k=0;k<treriymassiv3;k++)
             {
            
                 massichik3[ i][j]+= massichik[i][k] * massichik2[k][j];
