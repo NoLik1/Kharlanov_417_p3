@@ -24,22 +24,56 @@ private:
         this->col_count2=col_count2;
         this->row_count3=row_count3;
         this->col_count3=col_count3;
-        int **array = new int* [row_count];
-        for(int row = 0;row < row_count; row++) {
-            array[row] = new int [col_count] ;
+        std::cin >> row_count;
+        std::cin >> col_count;
+
+
+
+        array = new int* [row_count];
+        for (int row = 0; row < row_count; row++) {
+            array[row] = new int[col_count];
+        }
+
+
+
+        for (int row = 0; row < row_count; row++) {
+            for (int col = 0; col < col_count; col++) {
+                std::cin >> array[row][col];
+            }
+        }
+        for (int row = 0; row<row_count;row++){
+            for (int col = 0; col<col_count;col++){
+                    std::cout<<array[row][col]<<"\t";
+        }
+            std::cout<<std::endl;
+        }
+        std::cin >> row_count2;
+        std::cin >> col_count2;
+
+
+
+        array2 = new int* [row_count2];
+        for (int row = 0; row < row_count2; row++) {
+            array2[row] = new int[col_count2];
+        }
+
+
+
+        for (int row = 0; row < row_count2; row++) {
+            for (int col = 0; col < col_count2; col++) {
+                std::cin >> array2[row][col];
+            }
+        }
+        for (int row = 0; row<row_count2;row++){
+            for (int col = 0; col<col_count2;col++){
+                    std::cout<<array2[row][col]<<"\t";
+        }
+            std::cout<<std::endl;
         }
         
-        int **array2 = new int* [row_count2];
-       
-        for (int row = 0;row < row_count2; row++) {
-            array2[row] = new int [col_count2] ;
-        }
-        int **array3 = new int* [row_count3];
-        for (int row = 0;row < row_count3; row++) {
-            array3[row] = new int [col_count3] ;
-        }
-        
-    }    void input_dinamic(int**& array, int& row_count, int& col_count) // создание функции по вводу динамического массива с экрана
+    }
+    
+    void input_dinamic(int**& array, int& row_count, int& col_count) // создание функции по вводу динамического массива с экрана
     {
         this->array=array;
         this->row_count=row_count;
