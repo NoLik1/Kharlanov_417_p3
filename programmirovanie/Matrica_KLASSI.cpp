@@ -65,6 +65,7 @@ private:
             for (int row = 0; row<row_count3;row++){
                 delete [] array3 [row];
              }
+        delete [] array3;
     }
     void mat_multiplication (int**& array, int& row_count,int& col_count,int**& array2, int& row_count2,int& col_count2,int**& array3, int& row_count3, int& col_count3) {
        
