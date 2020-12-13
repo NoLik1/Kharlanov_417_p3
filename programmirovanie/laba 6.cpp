@@ -3,6 +3,8 @@
 #include<bitset>
 #include<iostream>
 #include<math.h> // библиотека для округления чисел
+#include <cstdio>
+#include <fstream>
 int main()
 {
 setlocale(LC_ALL, "Russian");
@@ -34,10 +36,32 @@ std::cout << "round(15.4) = " << round(x2) << std::endl; //
 std::cout << "ceil(15.6) = " << ceil(x1) << std::endl; // округление к большему
 std::cout << "ceil(15.4) = " << ceil(x2) << std::endl; // округление к большему
 std::cout << "floor(15.6) = " << floor(x1) << std::endl; //округление к меньшему
-std::cout << "floor(15.4) = " << floor(x2) << std::endl; //округление к меньшему
+    std::cout << "floor(15.4) = " << floor(x2) << std::endl; //округление к меньшему
 
     std::cout<<""<<std::endl;
-system ("pause");
-return 0;
-    
+    FILE* ptrFile = fopen("file.txt", "rb") ; // в данном файле записана строка "Пример использования функции fopen"
+    if (ptrFile == NULL) perror("Ошибка открытия файла");
+    else
+    {
+        while (!feof(ptrFile)) // повторять цикл, пока не конец файла
+        {
+            char buffer[100] = { 0 };
+            fgets(buffer, 100, ptrFile);
+            std::cout << buffer<<std::endl;
+        }
+        fclose(ptrFile); // закрыть файл
+    }
+    FILE * ptrFile1 = fopen( "examp.txt" , "wb" ); // открыть для записи
+    fputs( "This is sample." , ptrFile1 ); // записать в файл строку
+    fseek( ptrFile1 , 9 , SEEK_SET ); // изменить позицию на 9 байт относительно начала файла
+    fputs( "parta" , ptrFile1 ); // дописать слово в файл    fclose ( ptrFile1 );
+    FILE * ptrFile2 = fopen("file.txt", "w"); // открыть файл file.txt в текущем каталоге в режиме только для чтения
+    if (ptrFile2 != NULL) // проверить, удалось ли открыть файл
+    {
+    fputs("Пример использования функции fopen ", ptrFile2); // записать строку в файл
+    fclose (ptrFile2);
+    }
+    system ("pause");
+    return 0;
+  
 }
