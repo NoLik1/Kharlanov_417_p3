@@ -1,8 +1,11 @@
-//
-//  exams.cpp
-//  programmirovanie
-//
-//  Created by Женя Харланов on 13.12.2020.
-//
+#include<locale.h>
+#include<bitset>
+#include<iostream>
+#include<math.h> 
+#include <cstdio>
+#include <fstream>
 
-#include "exams.hpp"
+int main () {
+    system("pause");
+    return 0;
+}
