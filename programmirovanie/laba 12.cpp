@@ -30,32 +30,34 @@ public:
             cin>>Hero[i]->age;
     }
 }
-    void output (personage Hero [100],int &n){
+    void output (personage *Hero [100],int &n){
+        
         for (int i = 0; i<n;i++){
-        cout<<"Имя = "<<Hero[i].name<<"\n"<<endl;
-        cout<<"Фамилия = "<<Hero[i].surname<<"\n"<<endl;
-        cout<<"Возраст = "<<Hero[i].age<<"\n"<<endl;
+            cout<<"Имя = "<<Hero[i]->name<<"\n"<<endl;
+            cout<<"Фамилия = "<<Hero[i]->surname<<"\n"<<endl;
+            cout<<"Возраст = "<<Hero[i]->age<<"\n"<<endl;
     }
 }
 };
 //personage Hero [100],
-class GodOfWar2  : public GodOfWar {
+class GodOfWar2 : public GodOfWar {
 public:
-   GodOfWar2::personage Hero [100];
-    void in (personage Hero [100], int &n) {
-        cout<<"Введите данные ваших персонажей"<<endl;
-        GodOfWar2::input(Hero [100],n);
+    personage Hero [100];
+    void in (personage *Hero [100], int &n) {
+        cout<<"Введите данные ваших персонажей, но для начала, введите их количество"<<endl;
+        GodOfWar2::input(&Hero[100],n);
     }
-     void  ou (personage Hero [100],int &n) {
+    void  ou (personage *Hero [100],int &n) {
          cout<<"Вывод ваших персонажей"<<endl;
-        GodOfWar2::output(n);
+        GodOfWar2::output(&Hero[100],n);
      
     }
 };
 
 int main () {
-    GodOfWar2 game;
+    GodOfWar2::personage **Hero = nullptr;
+    GodOfWar2 gamefull;
     int n;
-    game.in(Hero [100],n);
-    game.ou(Hero[100],n);
+    gamefull.in(Hero, n);
+    gamefull.ou(Hero, n);
 }
